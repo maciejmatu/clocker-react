@@ -1,23 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { TimeComponent } from "./TimeComponent";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TimeComponent delay={100} location="Europe/Berlin" />
+        <TimeComponent delay={500} location="Europe/Lisbon" />
+        <TimeComponent delay={1000} location="Asia/Brunei" />
+        <TimeComponent delay={3000} location="Asia/Tokyo" />
+        <TimeComponent delay={5000} location="Pacific/Palau" />
+        <TimeComponent delay={10000} location="America/New_York" />
+        <TimeComponent delay={20000} location="Australia/Melbourne" />
       </header>
     </div>
   );
