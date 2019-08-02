@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 
 export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
   const [{ datetime }, setTimeData] = React.useState({});

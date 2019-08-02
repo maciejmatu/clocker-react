@@ -1,6 +1,5 @@
 import React from "react";
 import { TimeComponent } from "./TimeComponent";
-import "./App.css";
 
 function App() {
   return (

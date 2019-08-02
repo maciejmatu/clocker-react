@@ -1,1 +1,1 @@
-Test how google crawls JS based websites
+Test how google crawls dynamic, js based websites (react.js)
