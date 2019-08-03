@@ -1,5 +1,7 @@
 import React from "react";
 
+const apiPath = "https://clocker-next.maciejmatu.now.sh/api";
+
 export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
   const [{ datetime }, setTimeData] = React.useState({});
   const [isLoadingTime, setLoadingTime] = React.useState(false);
@@ -7,7 +9,7 @@ export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
   React.useEffect(() => {
     setLoadingTime(true);
     fetch(
-      `http://slowwly.robertomurray.co.uk/delay/${delay}/url/http://worldtimeapi.org/api/timezone/${location}`
+      `${apiPath}/time?delay=${delay}&location=${encodeURIComponent(location)}`
     )
       .then(res => res.json())
       .then(data => {
