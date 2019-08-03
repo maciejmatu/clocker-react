@@ -10,8 +10,8 @@ function App() {
         <TimeComponent delay={1000} location="Asia/Brunei" />
         <TimeComponent delay={3000} location="Asia/Tokyo" />
         <TimeComponent delay={5000} location="Pacific/Palau" />
-        <TimeComponent delay={10000} location="America/New_York" />
-        <TimeComponent delay={20000} location="Australia/Melbourne" />
+        <TimeComponent delay={8000} location="America/New_York" />
+        <TimeComponent delay={12000} location="Australia/Melbourne" />
       </header>
     </div>
   );
