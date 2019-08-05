@@ -1,8 +1,7 @@
 import React from "react";
 import { reportError } from "./setupErrorLogger";
 
-// const apiPath = "https://clocker-next.maciejmatu.now.sh/api";
-const apiPath = "http://localhost:3000/api";
+const apiPath = "https://clocker-next.maciejmatu.now.sh/api";
 
 export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
   const [{ datetime }, setTimeData] = React.useState({});
