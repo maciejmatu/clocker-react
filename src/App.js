@@ -1,5 +1,8 @@
 import React from "react";
 import { TimeComponent } from "./TimeComponent";
+import { setupErrorLogger } from "./setupErrorLogger";
+
+setupErrorLogger();
 
 function App() {
   return (

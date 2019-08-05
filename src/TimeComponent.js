@@ -1,6 +1,8 @@
 import React from "react";
+import { reportError } from "./setupErrorLogger";
 
-const apiPath = "https://clocker-next.maciejmatu.now.sh/api";
+// const apiPath = "https://clocker-next.maciejmatu.now.sh/api";
+const apiPath = "http://localhost:3000/api";
 
 export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
   const [{ datetime }, setTimeData] = React.useState({});
@@ -11,11 +13,18 @@ export function TimeComponent({ delay = 100, location = "Europe/Berlin" }) {
     fetch(
       `${apiPath}/time?delay=${delay}&location=${encodeURIComponent(location)}`
     )
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error(res.statusText);
+        }
+      })
       .then(data => {
         setLoadingTime(false);
         setTimeData(data);
-      });
+      })
+      .catch(reportError);
   }, [delay, location]);
 
   if (!isLoadingTime && datetime) {
